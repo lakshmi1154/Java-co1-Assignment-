@@ -1,0 +1,91 @@
+TASK 1 – Understand the Problem and Identify the Objects (4 Marks)
+1. Problem Analysis
+The Campus Smart-Parking System is designed to manage parking spaces in a university. It allows students, staff, and visitors to park their vehicles. The system allocates a suitable parking slot when a vehicle enters and issues a unique parking ticket. When the vehicle leaves, the system releases the slot and calculates the parking fee based on the vehicle type and parking duration.
+The system supports two-wheelers, cars, and electric vehicles. Electric vehicles can use special charging slots and pay additional charging fees. Students and staff with valid monthly passes can park for free, while visitors must pay the parking fee.
+2. Inputs and Outputs
+Inputs:
+Vehicle registration number.
+Vehicle type.
+Floor and slot information.
+Vehicle entry and exit times.
+Monthly pass details.
+Charging units consumed by electric vehicles.
+Outputs:
+Allocated parking floor and slot.
+Unique parking ticket number.
+Parking entry and exit details.
+Total parking fee.
+Slot availability.
+Error message when parking is full or the input is invalid.
+3. Candidate Classes and Responsibilities
+Class
+Responsibility
+Vehicle
+Stores common vehicle details.
+TwoWheeler
+Represents a two-wheeler and its parking rate.
+Car
+Represents a car and its parking rate.
+ElectricCar
+Represents an electric car with charging facilities.
+ParkingSlot
+Stores slot number and availability.
+ParkingFloor
+Manages parking slots on a floor.
+ParkingTicket
+Stores ticket number, vehicle number, and entry time.
+ParkingFacility
+Allocates slots and releases them when vehicles leave.
+ParkingPass
+Stores information about valid parking passes.
+ParkingService
+Calculates parking fees and manages parking operations.
+Justification: These classes separate responsibilities and make the program easier to maintain. For example, Vehicle stores common information, while Car and TwoWheeler can have different parking rates.
+4. Important Business Rules
+One parking slot can hold only one vehicle at a time.
+Every parking ticket must have a unique ticket number.
+A vehicle must be assigned only to an available slot.
+An occupied slot must be released when the vehicle leaves.
+Parking fees depend on vehicle type and parking duration.
+Students and staff with valid monthly passes can park free of charge.
+Visitors must pay the applicable parking fee.
+Invalid floor and slot numbers must be rejected.
+Duplicate active vehicle registrations must not be accepted.
+Charging fees must be calculated separately for eligible electric vehicles.
+5. Assumptions
+Each vehicle has a unique registration number.
+Parking slots are numbered starting from zero in the Java arrays.
+Parking rates are fixed unless the pricing rules change.
+Entry and exit times are recorded by the system.
+A valid monthly pass is checked before calculating the fee.
+Different floors may contain different numbers of slots.
+6. Alternative Concept and Complexity Analysis
+Object-oriented approach
+Each vehicle is represented by a Vehicle object containing its registration number, type, and related methods.
+Searching for a vehicle in an array of n vehicles takes O(n) time in the worst case.
+Parallel-array approach
+The same information can be stored in separate arrays:
+String[] regNo = new String[100];
+String[] type = new String[100];
+long[] entryTime = new long[100];
+The information belonging to a vehicle must be kept at the same index in all arrays.
+Searching for a registration number also takes O(n) time.
+Feature
+Object-oriented approach
+Parallel arrays
+Search time
+O(n)
+O(n)
+Data organisation
+Data grouped in objects
+Data stored separately
+Adding a new attribute
+Add a field to the class
+Create and maintain another array
+Maintainability
+Easier for complex systems
+More difficult as attributes increase
+Space complexity
+O(n) overall
+O(n) overall
+Conclusion: The object-oriented approach is preferable because it groups related data and behaviour together and supports inheritance and polymorphism.
