@@ -1,0 +1,38 @@
+# Task 5 – Static Members and Object Life Cycle
+
+## Objective
+To understand static members and the life cycle of Java objects.
+
+## Static Variables
+The ticketCounter variable is static because it is shared by
+all ParkingTicket objects. It generates unique ticket numbers.
+
+## Static Methods
+The getTicketCounter() method is static because it accesses
+class-level data without requiring an individual ticket object.
+
+## Object Life Cycle
+A ParkingTicket object is created when a vehicle enters the parking
+facility. When the ticket is no longer referenced, it becomes
+eligible for garbage collection.
+
+## Object Passing
+Objects can be passed as arguments to methods and returned
+from methods using reference variables.
+
+## Alternative Concept
+If the counter were an instance variable, each ParkingFacility
+object could maintain a separate counter. This is useful when
+ticket numbering must be independent for different facilities.
+
+A shared static counter provides one counter for all instances
+of the class.
+
+## Complexity Analysis
+Updating the counter takes O(1) time.
+The counter requires O(1) space.
+For n ticket objects, the tickets require O(n) total space.
+
+## Conclusion
+Static members are useful for shared data, such as ticket numbers,
+while instance variables store information specific to each ticket.
