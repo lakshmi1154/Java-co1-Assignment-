@@ -1,0 +1,46 @@
+# Task 11 – Implement, Test and Defend the Design
+
+## Objective
+To implement and test a parking ticket system using Java.
+
+## Implementation
+The program creates parking tickets and stores active tickets
+in a HashMap using vehicle registration numbers as keys.
+
+## Test Cases
+
+| Test | Expected Result |
+|---|---|
+| Add two vehicles | 2 active tickets |
+| Search for a registered vehicle | Vehicle found |
+| Remove a vehicle on exit | 1 active ticket remains |
+| Search for an unknown vehicle | Vehicle not found |
+
+## Complexity Analysis
+
+Array:
+- Searching for a ticket: O(n).
+- Space: O(n).
+
+ArrayList:
+- Searching for a ticket: O(n).
+- Removing a ticket: O(n).
+- Space: O(n).
+
+HashMap:
+- Searching for a ticket: O(1) average.
+- Removing a ticket: O(1) average.
+- Space: O(n).
+
+## Evaluation
+A HashMap provides efficient searching and removal using
+vehicle registration numbers. Duplicate registrations should
+be checked before adding a new ticket.
+
+## Limitation
+The example uses a simplified parking fee calculation and
+does not include complete floor and slot allocation.
+
+## Conclusion
+A HashMap is suitable for managing active parking tickets
+because it provides efficient average-case lookup.
