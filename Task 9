@@ -1,0 +1,44 @@
+# Task 9 – Introduce Abstraction
+
+## Objective
+To use abstract classes and interfaces in Java.
+
+## Abstract Class
+Vehicle is an abstract class because it represents a general
+vehicle and defines the common structure.
+
+The calculateFee() method is abstract and is implemented
+by its subclasses.
+
+## Interface
+Chargeable is an interface that defines the chargingFee()
+method for electric vehicles.
+
+## Difference
+An abstract class can contain instance variables,
+constructors, concrete methods and abstract methods.
+
+An interface defines a contract that implementing classes
+must follow. A class can implement multiple interfaces.
+
+## Multiple Behaviours
+ElectricCar extends Vehicle and implements Chargeable.
+Therefore, it supports both parking and charging operations.
+
+## Alternative Concept
+If Vehicle were an interface, it could not provide a
+constructor or maintain instance state in the same way
+as an abstract class.
+
+If Chargeable were an abstract class, Java's single class
+inheritance would prevent ElectricCar from extending another
+class at the same time.
+
+## Complexity Analysis
+- Parking fee calculation: O(1)
+- Charging fee calculation: O(1)
+- Space per vehicle: O(1) for a fixed number of fields.
+
+## Conclusion
+Abstraction hides implementation details and separates
+common vehicle behaviour from specialised capabilities.
