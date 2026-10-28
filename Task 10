@@ -1,0 +1,41 @@
+# Task 10 – Packages and Encapsulation
+
+## Objective
+To protect data using encapsulation and access modifiers in Java.
+
+## Package Structure
+The system can be organized into:
+- parking.model
+- parking.service
+- parking.app
+
+## Access Modifiers
+- private: Protects fields from direct access.
+- public: Allows access to methods from other classes.
+- protected: Allows access within the package and subclasses.
+- default: Allows access within the same package.
+
+## Getters and Setters
+Getters retrieve private values. Setters validate data before
+updating fields. Invalid slot numbers and vehicle numbers are rejected.
+
+## Wrapper Classes and Autoboxing
+Wrapper classes represent primitive values as objects.
+Autoboxing automatically converts a primitive into its wrapper object.
+For example, int can be converted into Integer.
+
+Using == to compare Integer objects may compare references rather
+than numeric values. The equals() method is safer for value comparison.
+
+## Alternative Concept
+If fields were public, any class could modify them directly without
+validation. This could produce invalid data.
+
+## Complexity Analysis
+- Validation per update: O(1).
+- Getter operation: O(1).
+- Extra space for validation: O(1).
+
+## Conclusion
+Encapsulation protects data and ensures that invalid values
+cannot be assigned through the provided methods.
