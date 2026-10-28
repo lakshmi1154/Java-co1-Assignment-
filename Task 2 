@@ -1,0 +1,79 @@
+# Task 2 – Choose the Data Representation
+
+## Objective
+To represent parking floors and slots using Java data types and arrays.
+
+## Data Types
+- int: Floor number, slot number and duration.
+- String: Vehicle registration number.
+- LocalDateTime: Vehicle entry time.
+- double: Parking fee.
+
+## Array Representation
+A jagged two-dimensional array (String[][]) is used to represent parking slots. Each floor can have a different number of slots.
+
+## Type Conversion
+The expression (duration + 59) / 60 calculates the number of started hours using integer arithmetic.
+
+Example:
+90 minutes = 2 billable hours.
+
+## Input Method
+The Scanner class is used to read user input.
+
+## Alternative Representation
+A one-dimensional array can represent all parking slots, but index calculations are required when floors have different numbers of slots. An ArrayList<String[]> can store floors dynamically.
+
+## Complexity Analysis
+- Accessing a slot using its indexes: O(1)
+- Searching for a free slot: O(N)
+- Space complexity: O(N)
+
+Here, N represents the total number of parking slots.
+
+## Conclusion
+A jagged two-dimensional array is suitable because different floors can have different numbers of parking slots.import java.util.Scanner;
+import java.time.LocalDateTime;
+
+public class Task02 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String[][] slots = new String[3][];
+        slots[0] = new String[20];
+        slots[1] = new String[50];
+        slots[2] = new String[100];
+
+        System.out.print("Enter vehicle number: ");
+        String vehicleNo = sc.nextLine();
+
+        System.out.print("Enter floor number: ");
+        int floor = sc.nextInt();
+
+        System.out.print("Enter slot number: ");
+        int slot = sc.nextInt();
+
+        LocalDateTime entryTime = LocalDateTime.now();
+
+        int duration = 90;
+        int hours = (duration + 59) / 60;
+        double ratePerHour = 30.0;
+        double fee = hours * ratePerHour;
+
+        if (floor >= 0 && floor < slots.length &&
+            slot >= 0 && slot < slots[floor].length &&
+            slots[floor][slot] == null) {
+
+            slots[floor][slot] = vehicleNo;
+
+            System.out.println("Vehicle Number: " + vehicleNo);
+            System.out.println("Entry Time: " + entryTime);
+            System.out.println("Parking Fee: Rs " + fee);
+            System.out.println("Parking slot allocated successfully.");
+        } else {
+            System.out.println("Invalid or occupied parking slot.");
+        }
+
+        sc.close();
+    }
+}
