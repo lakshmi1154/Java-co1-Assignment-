@@ -1,0 +1,40 @@
+# Task 4 – Classes, Objects and Constructors
+
+## Objective
+To design Java classes and create objects using constructors.
+
+## Classes and Fields
+The ParkingTicket class stores the ticket number, vehicle number,
+floor number and slot number.
+
+## Constructors
+1. Default Constructor: Creates a ticket with default values.
+2. Parameterized Constructor: Creates a ticket using given values.
+3. Copy Constructor: Creates a new ticket using the details of
+   an existing ticket.
+
+## this Keyword
+The this keyword refers to the current object.
+Constructor chaining is used to avoid repeated code.
+
+## Memory Management
+Reference variables refer to objects stored in heap memory.
+Local reference variables are generally stored in stack frames.
+Objects become eligible for garbage collection when they are
+no longer reachable.
+
+## Alternative Concept
+Instead of overloaded constructors, objects can be created using
+a default constructor followed by setter methods. However, this
+may allow invalid objects to exist temporarily.
+
+Static factory methods are another option for controlled object creation.
+
+## Complexity Analysis
+Creating n tickets takes O(n) total time.
+The objects require O(n) total space.
+Each ticket requires O(1) space for a fixed number of fields.
+
+## Conclusion
+Constructors help initialize objects properly and constructor
+chaining reduces code duplication.
