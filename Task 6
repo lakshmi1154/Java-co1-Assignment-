@@ -1,0 +1,78 @@
+# Task 6 – Design the Inheritance Hierarchy
+
+## Objective
+To design an inheritance hierarchy for vehicles using Java.
+
+## 1. Inheritance Hierarchy
+
+Vehicle is the superclass.
+
+- Car extends Vehicle.
+- TwoWheeler extends Vehicle.
+- ElectricCar extends Car.
+
+This design uses hierarchical and multilevel inheritance.
+
+## 2. Superclass and Subclasses
+
+Vehicle:
+Stores common vehicle information such as registration number.
+
+Car:
+Inherits the registration number from Vehicle.
+
+TwoWheeler:
+Represents two-wheeler vehicles and inherits Vehicle properties.
+
+ElectricCar:
+Inherits properties from Car and represents an electric car.
+
+## 3. Use of super Keyword
+
+The super keyword calls the constructor of the parent class.
+It initializes the registration number and avoids repeating code.
+
+## 4. Constructor Execution Order
+
+When an ElectricCar object is created, constructors execute in this order:
+
+1. Vehicle constructor
+2. Car constructor
+3. ElectricCar constructor
+
+The parent constructor executes before the child constructor.
+
+## 5. UML Class Diagram
+
+             Vehicle
+             /     \
+           Car   TwoWheeler
+            |
+        ElectricCar
+
+## 6. Alternative Concept: Composition
+
+Instead of inheritance, a Vehicle class could contain a VehicleType
+object that stores the vehicle category and hourly rate.
+
+Inheritance represents an IS-A relationship.
+Composition represents a HAS-A relationship.
+
+## 7. Complexity Analysis
+
+Inheritance:
+- Fee calculation: O(1)
+- Additional relationship storage: O(1) per vehicle, excluding object overhead.
+
+Composition:
+- Fee calculation: O(1)
+- Stores a VehicleType reference per vehicle.
+
+Adding a new vehicle type using inheritance generally requires
+creating a new subclass. With composition, a new type can often
+be added by creating a new VehicleType object without creating
+another Vehicle subclass.
+
+## Conclusion
+Inheritance reduces code duplication and supports code reuse.
+The hierarchy can be extended by adding new vehicle subclasses.
