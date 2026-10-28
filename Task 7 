@@ -1,0 +1,30 @@
+# Task 7 – Override and Specialise Behaviour
+
+## Objective
+To implement method overriding in Java.
+
+## Method Overriding
+The Car class overrides the calculateFee() method of Vehicle
+to provide a different parking fee.
+
+## @Override Annotation
+The @Override annotation indicates that a method overrides
+a method declared in the parent class.
+
+## final Keyword
+The final keyword can prevent a variable from being reassigned,
+a method from being overridden, or a class from being inherited.
+
+## Object Class Methods
+- toString(): Returns vehicle information.
+- equals(): Compares vehicle registration numbers.
+- hashCode(): Returns a hash code based on the registration number.
+
+## Alternative Concept
+A switch statement could calculate fees based on vehicle type.
+However, adding a new type may require modifying the existing
+calculateFee() method.
+
+## Complexity Analysis
+- Fee calculation: O(1)
+- Equality comparison
