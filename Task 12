@@ -1,0 +1,43 @@
+# Task 12 – Re-evaluate and Adapt the Design
+
+## A. Impact Analysis
+The university introduces e-bikes, delivery vans and one-day passes.
+The parking facility also expands to five floors with different
+numbers of slots.
+
+The Vehicle hierarchy, pricing rules and pass management must be
+updated. A jagged array supports different slot counts on each floor.
+
+## B. Evaluation of the Original Design
+Inheritance allows new vehicle categories to be represented by
+subclasses. However, pricing rules should be separated from vehicle
+classes to make future changes easier.
+
+## C. Adaptation or Redesign
+The revised design uses:
+- Vehicle: Abstract superclass.
+- Car: Represents cars.
+- EBike: Represents e-bikes with a flat fee.
+- DeliveryVan: Represents delivery vans.
+- Pass: Interface for parking passes.
+- OneDayPass: Represents a one-day pass.
+
+The example uses separate subclasses and a Pass interface.
+
+## D. Evidence-Based Defence
+The program demonstrates the three vehicle categories and a
+one-day pass. Each vehicle type provides its own fee calculation.
+
+## Complexity Analysis
+- Fee calculation: O(1).
+- Pass validation: O(1).
+- Space per vehicle: O(1), excluding object overhead.
+
+## Trade-offs
+Inheritance makes vehicle-specific behaviour clear. Separating
+pricing into a PricingRule abstraction would make it easier to
+change time-based pricing without modifying vehicle classes.
+
+## Conclusion
+The design should be modified to support new vehicle categories,
+one-day passes and different numbers of slots per floor.
