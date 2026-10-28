@@ -1,0 +1,74 @@
+# Task 3 – Design the Control Logic
+
+## Objective
+To design the control logic for allocating parking slots,
+releasing slots, and calculating parking fees.
+
+## 1. Slot Allocation
+
+The program searches each floor and each slot using nested loops.
+When it finds a free slot, it stores the vehicle number and returns
+the floor and slot numbers. If no free slot is available, it returns null.
+
+## 2. Slot Release
+
+The program checks whether the floor and slot numbers are valid.
+If the slot contains a vehicle, it releases the slot and returns true.
+Otherwise, it returns false.
+
+## 3. Parking Fee Calculation
+
+Every started hour is charged in full.
+
+Formula:
+Billable Hours = (Parking Duration + 59) / 60
+
+Parking Fee = Billable Hours × Rate Per Hour
+
+Example:
+Duration = 90 minutes
+Rate = Rs. 30 per hour
+Billable Hours = 2
+Parking Fee = Rs. 60
+
+## 4. Pseudocode for Slot Allocation
+
+START
+1. Read vehicle number.
+2. FOR each floor:
+   FOR each slot:
+      IF slot is empty:
+         Store vehicle number.
+         Return floor and slot numbers.
+      END IF
+   END FOR
+END FOR
+3. Return null if no free slot is available.
+STOP
+
+## 5. Pseudocode for Parking Fee
+
+START
+1. Read parking duration and hourly rate.
+2. Calculate billable hours using (duration + 59) / 60.
+3. Calculate fee = billable hours × hourly rate.
+4. Display the parking fee.
+STOP
+
+## 6. Complexity Analysis
+
+Allocation:
+- Time Complexity: O(N), where N is the total number of slots.
+- Space Complexity: O(N) for storing parking slots.
+
+Release:
+- Time Complexity: O(1).
+- Extra Space Complexity: O(1).
+
+An alternative approach uses a stack of free slots for faster
+allocation and release, but it requires additional storage.
+
+## Conclusion
+Nested loops are used to allocate the first available slot.
+The release method validates the position before freeing the slot.
+These operations help maintain correct parking records.
